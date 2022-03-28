@@ -1,0 +1,31 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version"
+        required: true
+        default: "1.x.x"
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          registry-url: "https://registry.npmjs.org"
+      - run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          npm version ${{ github.event.inputs.version }}
+          npm ci
+          npm publish
+          git commit --amend -am "Release version ${{ github.event.inputs.version }}"
+          git tag "v${{github.event.inputs.version}}"
+          git push origin
+          git push origin "v${{ github.event.inputs.version }}"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
