@@ -22,6 +22,7 @@ jobs:
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           npm version ${{ github.event.inputs.version }}
           npm ci
+          npm run build
           npm publish
           git commit --amend -am "Release version ${{ github.event.inputs.version }}"
           git push origin
