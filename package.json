@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/pmwmedia/live-reload-webpack-plugin",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "files": [
     "dist/client-disabled.js",
