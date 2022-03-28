@@ -41,9 +41,9 @@ describe("webpack plugin", () => {
     });
 
     test("should generate enabled client with custom host", async () => {
-        const plugin = new LiveReloadPlugin({port: 42});
+        const plugin = new LiveReloadPlugin({port: 4242});
         const targetFile = await compile(plugin);
-        expect(readFileSync(targetFile).toString()).toMatch(/localhost:42/);
+        expect(readFileSync(targetFile).toString()).toMatch(/localhost:4242/);
     });
 
     function compile(plugin: LiveReloadPlugin): Promise<string> {
