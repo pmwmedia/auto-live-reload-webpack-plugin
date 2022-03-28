@@ -1,8 +1,8 @@
 # Auto Live Reload Webpack Plugin
 
+[![npm](https://img.shields.io/npm/v/auto-live-reload-webpack-plugin.svg)](https://npmjs.com/package/auto-live-reload-webpack-plugin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build](https://github.com/pmwmedia/auto-live-reload-webpack-plugin/actions/workflows/build.yaml/badge.svg)](https://github.com/pmwmedia/auto-live-reload-webpack-plugin/actions/workflows/build.yaml)
-[![env](https://img.shields.io/badge/env-development-blue)](https://img.shields.io/badge/env-development-blue)
 
 This Webpack plugin can be used to reload the web page automatically when Webpack recompiled any bundle like HTML pages, JavaScript, or stylesheets. It works even on any custom server. DevServer is not required. The plugin is especially helpful when running Webpack in watch mode.
 
