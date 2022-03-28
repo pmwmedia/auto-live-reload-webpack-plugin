@@ -21,7 +21,9 @@
     "dist/client-disabled.js",
     "dist/client-enabled.js",
     "dist/index.js",
-    "dist/index.d.ts"
+    "dist/index.d.ts",
+    "license.txt",
+    "readme.md"
   ],
   "keywords": [
     "webpack",
