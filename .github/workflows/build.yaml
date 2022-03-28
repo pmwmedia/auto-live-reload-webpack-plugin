@@ -16,10 +16,10 @@ jobs:
       - run: |
           npm install
           npm run build
+          npm run test
           npm run lint
       - run: |
           cd ./demo
           npm install
           npm run build
-          npm run test
           npm run lint
