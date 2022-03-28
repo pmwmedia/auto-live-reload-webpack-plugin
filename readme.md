@@ -95,7 +95,7 @@ module.exports = [
 
 4. Add both `main.js` and `main-livereload.js` to your server. Both bundles have to inserted into your HTML page. `main.js` contains all your business logic and `main-livereload.js` contains only a few lines for the live reload logic.
 
-For each bundle that should support live reload, a separate instance of `AutoLiveReloadPlugin` and a separate entry point for `autoAutoLiveReloadPlugin.clientEntryFile()` are required.
+Multiple entry points can share the same instance of `AutoLiveReloadPlugin` and the same entry point for `autoAutoLiveReloadPlugin.clientEntryFile()`. However, multiple live reload files are supported in the same HTML page in opposite to `tiny-lr` based Webpack plugins.
 
 ## Credits
 
