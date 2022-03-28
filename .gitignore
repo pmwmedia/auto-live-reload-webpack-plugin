@@ -1,4 +1,6 @@
 .*
 *.iml
+/demo/dist/
+/demo/node_modules/
 /dist/
 /node_modules/
