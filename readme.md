@@ -1,5 +1,4 @@
 # Live Reload Webpack Plugin
-Webpack plugin that allows pages and resources to be automatically reloaded without using DevServer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build](https://github.com/pmwmedia/live-reload-webpack-plugin/actions/workflows/build.yaml/badge.svg)](https://github.com/pmwmedia/live-reload-webpack-plugin/actions/workflows/build.yaml)
