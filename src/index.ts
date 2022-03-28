@@ -13,20 +13,20 @@ class LiveReloadPlugin implements WebpackPluginInstance {
     private readonly httpServer: Server | null;
     private readonly webSocketServer: WebSocketServer | null;
 
-    constructor(options: Options) {
+    constructor(options?: Options) {
         const tempDirectory = resolve(__dirname, "..", "tmp");
         mkdirSync(tempDirectory, {recursive: true});
         this.clientFile = openSync({dir: tempDirectory, prefix: "client-", suffix: ".js"});
 
-        if (options.enabled === false) {
+        if (options !== undefined && options.enabled === false) {
             this.httpServer = null;
             this.webSocketServer = null;
 
             const sourceFilePath = resolve(__dirname, "client-disabled.js");
             writeFileSync(this.clientFile.fd, readFileSync(sourceFilePath));
         } else {
-            const host = options.host === undefined ? "localhost" : options.host;
-            const port = options.port === undefined ? 0 : options.port;
+            const host = options === undefined || options.host === undefined ? "localhost" : options.host;
+            const port = options === undefined || options.port === undefined ? 0 : options.port;
 
             this.httpServer = createServer().listen(port);
             this.webSocketServer = new WebSocketServer({server: this.httpServer});
