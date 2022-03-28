@@ -6,8 +6,8 @@
     "lint": "eslint *.js src/**/*.js"
   },
   "devDependencies": {
+    "auto-live-reload-webpack-plugin": "..",
     "eslint": "^8.11.0",
-    "live-reload-webpack-plugin": "..",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
   }

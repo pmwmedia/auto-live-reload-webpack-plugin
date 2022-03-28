@@ -1,7 +1,7 @@
-# Live Reload Webpack Plugin
+# Auto Live Reload Webpack Plugin
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Build](https://github.com/pmwmedia/live-reload-webpack-plugin/actions/workflows/build.yaml/badge.svg)](https://github.com/pmwmedia/live-reload-webpack-plugin/actions/workflows/build.yaml)
+[![Build](https://github.com/pmwmedia/auto-live-reload-webpack-plugin/actions/workflows/build.yaml/badge.svg)](https://github.com/pmwmedia/auto-live-reload-webpack-plugin/actions/workflows/build.yaml)
 [![env](https://img.shields.io/badge/env-development-blue)](https://img.shields.io/badge/env-development-blue)
 
 This Webpack plugin can be used to reload the web page automatically when Webpack recompiled any bundle like HTML pages, JavaScript, or stylesheets. It works even on any custom server. DevServer is not required. The plugin is especially helpful when running Webpack in watch mode.
@@ -9,11 +9,11 @@ This Webpack plugin can be used to reload the web page automatically when Webpac
 ## Install
 
 ```bash
-npm i --save-dev live-reload-webpack-plugin
+npm i --save-dev auto-live-reload-webpack-plugin
 ```
 
 ```bash
-yarn add --dev live-reload-webpack-plugin
+yarn add --dev auto-live-reload-webpack-plugin
 ```
 
 ## Options
@@ -41,24 +41,24 @@ By default, live reloading is enabled. If `enabled` is explicitly set to `false`
 1. Install the plugin:
 
 ```bash
-npm i --save-dev live-reload-webpack-plugin
+npm i --save-dev auto-live-reload-webpack-plugin
 ```
 
 ```bash
-yarn add --dev live-reload-webpack-plugin
+yarn add --dev auto-live-reload-webpack-plugin
 ```
 
 2. Add the plugin to your entry point in `webpack.config.js` or `webpack.config.ts`:
 
 ```javascript
 const path = require('path');
-const LiveReloadPlugin = require('live-reload-webpack-plugin');
+const AutoLiveReloadPlugin = require('auto-live-reload-webpack-plugin');
 
-const liveReloadPlugin = new LiveReloadPlugin({ /* place your options here */ });
+const autoAutoLiveReloadPlugin = new AutoLiveReloadPlugin({ /* place your options here */ });
 
 module.exports = {
   entry: './src/index.js',
-  plugins: [liveReloadPlugin],
+  plugins: [autoAutoLiveReloadPlugin],
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
@@ -70,21 +70,21 @@ module.exports = {
 
 ```javascript
 const path = require('path');
-const LiveReloadPlugin = require('live-reload-webpack-plugin');
+const AutoLiveReloadPlugin = require('auto-live-reload-webpack-plugin');
 
-const liveReloadPlugin = new LiveReloadPlugin();
+const autoAutoLiveReloadPlugin = new AutoLiveReloadPlugin();
 
 module.exports = [
   {
     entry: './src/index.js',
-    plugins: [liveReloadPlugin],
+    plugins: [autoAutoLiveReloadPlugin],
     output: {
       filename: 'main.js',
       path: path.resolve(__dirname, 'dist'),
     },
   },
   {
-    entry: liveReloadPlugin.clientEntryFile(),
+    entry: autoAutoLiveReloadPlugin.clientEntryFile(),
     output: {
       filename: 'main-livereload.js',
       path: path.resolve(__dirname, 'dist'),
@@ -95,7 +95,7 @@ module.exports = [
 
 4. Add both `main.js` and `main-livereload.js` to your server. Both bundles have to inserted into your HTML page. `main.js` contains all your business logic and `main-livereload.js` contains only a few lines for the live reload logic.
 
-For each bundle that should support live reload, a separate instance of `LiveReloadPlugin` and a separate entry point for `liveReloadPlugin.clientEntryFile()` are required.
+For each bundle that should support live reload, a separate instance of `AutoLiveReloadPlugin` and a separate entry point for `autoAutoLiveReloadPlugin.clientEntryFile()` are required.
 
 ## Credits
 

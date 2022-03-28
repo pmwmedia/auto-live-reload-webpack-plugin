@@ -1,1 +1,1 @@
-/* Live reload is disabled */
+/* Automatic live reload is disabled */

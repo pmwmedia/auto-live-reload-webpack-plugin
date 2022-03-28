@@ -8,7 +8,7 @@ import {WebSocketServer} from "ws";
 
 type Options = { host?: string, port?: number, enabled?: boolean }
 
-class LiveReloadPlugin implements WebpackPluginInstance {
+class AutoLiveReloadPlugin implements WebpackPluginInstance {
     private readonly clientFile: OpenFile;
     private readonly httpServer: Server | null;
     private readonly webSocketServer: WebSocketServer | null;
@@ -46,11 +46,11 @@ class LiveReloadPlugin implements WebpackPluginInstance {
     }
 
     apply(compiler: Compiler): void {
-        compiler.hooks.done.tap("LiveReloadPlugin", () => {
+        compiler.hooks.done.tap("AutoLiveReloadPlugin", () => {
             this.webSocketServer?.clients.forEach(socket => socket.send("RELOAD"));
         });
 
-        compiler.hooks.shutdown.tap("LiveReloadPlugin", () => {
+        compiler.hooks.shutdown.tap("AutoLiveReloadPlugin", () => {
             this.webSocketServer?.close();
             this.httpServer?.close();
             rmSync(this.clientFile.path, { recursive: true });
@@ -58,4 +58,4 @@ class LiveReloadPlugin implements WebpackPluginInstance {
     }
 }
 
-export = LiveReloadPlugin;
+export = AutoLiveReloadPlugin;

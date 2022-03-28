@@ -3,7 +3,7 @@ import path from "path";
 import {mkdirSync} from "temp";
 import {Compiler, webpack} from "webpack";
 
-import LiveReloadPlugin from "./index";
+import AutoLiveReloadPlugin from "./index";
 
 describe("webpack plugin", () => {
     let directory: string;
@@ -17,36 +17,36 @@ describe("webpack plugin", () => {
     });
 
     test("should generate default client", async () => {
-        const plugin = new LiveReloadPlugin();
+        const plugin = new AutoLiveReloadPlugin();
         const targetFile = await compile(plugin);
         expect(readFileSync(targetFile).toString()).toMatch(/localhost:[1-9]\d?/);
     });
 
     test("should generate disabled client", async () => {
-        const plugin = new LiveReloadPlugin({enabled: false});
+        const plugin = new AutoLiveReloadPlugin({enabled: false});
         const targetFile = await compile(plugin);
         expect(readFileSync(targetFile).toString()).toBe("");
     });
 
     test("should generate enabled client", async () => {
-        const plugin = new LiveReloadPlugin({enabled: true});
+        const plugin = new AutoLiveReloadPlugin({enabled: true});
         const targetFile = await compile(plugin);
         expect(readFileSync(targetFile).toString()).toMatch(/localhost:[1-9]\d?/);
     });
 
     test("should generate enabled client with custom host", async () => {
-        const plugin = new LiveReloadPlugin({host: "foo.bar"});
+        const plugin = new AutoLiveReloadPlugin({host: "foo.bar"});
         const targetFile = await compile(plugin);
         expect(readFileSync(targetFile).toString()).toMatch(/foo.bar:[1-9]\d?/);
     });
 
     test("should generate enabled client with custom host", async () => {
-        const plugin = new LiveReloadPlugin({port: 4242});
+        const plugin = new AutoLiveReloadPlugin({port: 4242});
         const targetFile = await compile(plugin);
         expect(readFileSync(targetFile).toString()).toMatch(/localhost:4242/);
     });
 
-    function compile(plugin: LiveReloadPlugin): Promise<string> {
+    function compile(plugin: AutoLiveReloadPlugin): Promise<string> {
         return new Promise((resolve, reject) => {
             const compiler = webpack({
                 entry: plugin.clientEntryFile(),

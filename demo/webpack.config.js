@@ -1,19 +1,19 @@
 const path = require('path');
-const LiveReloadPlugin = require('live-reload-webpack-plugin');
+const AutoLiveReloadPlugin = require('auto-live-reload-webpack-plugin');
 
-const liveReloadPlugin = new LiveReloadPlugin();
+const autoAutoLiveReloadPlugin = new AutoLiveReloadPlugin();
 
 module.exports = [
     {
         entry: './src/index.js',
-        plugins: [liveReloadPlugin],
+        plugins: [autoAutoLiveReloadPlugin],
         output: {
             filename: 'main.js',
             path: path.resolve(__dirname, 'dist'),
         },
     },
     {
-        entry: liveReloadPlugin.clientEntryFile(),
+        entry: autoAutoLiveReloadPlugin.clientEntryFile(),
         output: {
             filename: 'main-livereload.js',
             path: path.resolve(__dirname, 'dist'),

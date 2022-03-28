@@ -1,5 +1,5 @@
 {
-  "name": "live-reload-webpack-plugin",
+  "name": "auto-live-reload-webpack-plugin",
   "version": "1.0.0",
   "description": "Webpack plugin that allows pages and resources to be automatically reloaded without using DevServer",
   "main": "./dist/index.js",
@@ -8,12 +8,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmwmedia/live-reload-webpack-plugin.git"
+    "url": "git+https://github.com/pmwmedia/auto-live-reload-webpack-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/pmwmedia/live-reload-webpack-plugin/issues"
+    "url": "https://github.com/pmwmedia/auto-live-reload-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/pmwmedia/live-reload-webpack-plugin",
+  "homepage": "https://github.com/pmwmedia/auto-live-reload-webpack-plugin",
   "engines": {
     "node": ">= 14"
   },
