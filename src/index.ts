@@ -1,8 +1,8 @@
-import {mkdirSync, readFileSync, writeFileSync} from "fs";
+import {mkdirSync, readFileSync, rmSync, writeFileSync} from "fs";
 import {createServer, Server} from "http";
 import {AddressInfo} from "net";
 import {resolve} from "path";
-import {cleanupSync, OpenFile, openSync} from "temp";
+import {OpenFile, openSync} from "temp";
 import {Compiler, WebpackPluginInstance} from "webpack";
 import {WebSocketServer} from "ws";
 
@@ -17,6 +17,7 @@ class LiveReloadPlugin implements WebpackPluginInstance {
         const tempDirectory = resolve(__dirname, "..", "tmp");
         mkdirSync(tempDirectory, {recursive: true});
         this.clientFile = openSync({dir: tempDirectory, prefix: "client-", suffix: ".js"});
+        process.on("SIGINT", () => rmSync(this.clientFile.path, { recursive: true }));
 
         if (options !== undefined && options.enabled === false) {
             this.httpServer = null;
@@ -51,8 +52,8 @@ class LiveReloadPlugin implements WebpackPluginInstance {
 
         compiler.hooks.shutdown.tap("LiveReloadPlugin", () => {
             this.webSocketServer?.close();
-            this.httpServer?.close()
-            cleanupSync();
+            this.httpServer?.close();
+            rmSync(this.clientFile.path, { recursive: true });
         });
     }
 }
