@@ -45,6 +45,6 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.client.json && tsc -p tsconfig.plugin.json",
-    "lint": "npx eslint src/**/*"
+    "lint": "eslint src/**/*"
   }
 }
