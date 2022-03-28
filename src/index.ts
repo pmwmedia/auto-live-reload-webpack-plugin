@@ -23,7 +23,7 @@ class LiveReloadPlugin implements WebpackPluginInstance {
             this.httpServer = null;
             this.webSocketServer = null;
 
-            const sourceFilePath = resolve(__dirname, "client-disabled.js");
+            const sourceFilePath = resolve(__dirname, "..", "dist", "client-disabled.js");
             writeFileSync(this.clientFile.fd, readFileSync(sourceFilePath));
         } else {
             const host = options === undefined || options.host === undefined ? "localhost" : options.host;
@@ -33,7 +33,7 @@ class LiveReloadPlugin implements WebpackPluginInstance {
             this.webSocketServer = new WebSocketServer({server: this.httpServer});
 
             const httpAddress = this.httpServer.address() as AddressInfo;
-            const sourceFilePath = resolve(__dirname, "client-enabled.js");
+            const sourceFilePath = resolve(__dirname, "..", "dist", "client-enabled.js");
             let sourceContent = readFileSync(sourceFilePath).toString();
             sourceContent = sourceContent.replaceAll("HOST", host);
             sourceContent = sourceContent.replaceAll("PORT", httpAddress.port.toString());
