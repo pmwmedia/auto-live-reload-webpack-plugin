@@ -1,0 +1,15 @@
+{
+    "root": true,
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "quotes": ["warn", "single"],
+        "semi": "warn"
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    }
+}
