@@ -26,8 +26,14 @@
     "readme.md"
   ],
   "keywords": [
+    "browser",
+    "livereload",
+    "plugin",
+    "server",
+    "webserver",
+    "watch",
     "webpack",
-    "livereload"
+    "webpack-plugin"
   ],
   "dependencies": {
     "temp": "^0.9.0",
