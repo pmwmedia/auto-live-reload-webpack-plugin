@@ -23,6 +23,7 @@ jobs:
           npm version ${{ github.event.inputs.version }}
           npm ci
           npm run build
+          (cd ./demo && npm install)
           npm publish
           git commit --amend -am "Release version ${{ github.event.inputs.version }}"
           git push origin
