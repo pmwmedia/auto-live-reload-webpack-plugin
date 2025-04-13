@@ -40,7 +40,7 @@
     "ws": "^8.0.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.23",
+    "@types/node": "17.0.45",
     "@types/temp": "0.9.1",
     "@types/jest": "27.4.1",
     "@types/ws": "8.5.3",
