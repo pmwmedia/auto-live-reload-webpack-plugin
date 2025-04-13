@@ -57,45 +57,16 @@ const AutoLiveReloadPlugin = require('auto-live-reload-webpack-plugin');
 const autoAutoLiveReloadPlugin = new AutoLiveReloadPlugin({ /* place your options here */ });
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['./src/index.js', autoAutoLiveReloadPlugin.clientEntryFile()],
   plugins: [autoAutoLiveReloadPlugin],
   output: {
-    filename: 'main.js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
 };
 ```
 
-3. Add an entry point for the live reload bundles, which can be served by your custom server:
-
-```javascript
-const path = require('path');
-const AutoLiveReloadPlugin = require('auto-live-reload-webpack-plugin');
-
-const autoAutoLiveReloadPlugin = new AutoLiveReloadPlugin();
-
-module.exports = [
-  {
-    entry: './src/index.js',
-    plugins: [autoAutoLiveReloadPlugin],
-    output: {
-      filename: 'main.js',
-      path: path.resolve(__dirname, 'dist'),
-    },
-  },
-  {
-    entry: autoAutoLiveReloadPlugin.clientEntryFile(),
-    output: {
-      filename: 'main-livereload.js',
-      path: path.resolve(__dirname, 'dist'),
-    },
-  }
-];
-```
-
-4. Add both `main.js` and `main-livereload.js` to your server. Both bundles have to be inserted into your HTML page. `main.js` contains all your business logic and `main-livereload.js` contains only a few lines for the live reload logic.
-
-Multiple entry points can share the same instance of `AutoLiveReloadPlugin` and the same entry point for `autoAutoLiveReloadPlugin.clientEntryFile()`. However, multiple live reload files are supported in the same HTML page in opposite to `tiny-lr` based Webpack plugins.
+Multiple entry points can share the same instance of `AutoLiveReloadPlugin` and the same entry point for `autoAutoLiveReloadPlugin.clientEntryFile()`. In opposite to `tiny-lr` based Webpack plugins, multiple live reload files are supported in the same HTML page.
 
 ## Credits
 

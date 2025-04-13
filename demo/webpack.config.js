@@ -5,17 +5,10 @@ const autoLiveReloadPlugin = new AutoLiveReloadPlugin()
 
 module.exports = [
   {
-    entry: './src/index.js',
+    entry: ['./src/index.js', autoLiveReloadPlugin.clientEntryFile()],
     plugins: [autoLiveReloadPlugin],
     output: {
-      filename: 'main.js',
-      path: path.resolve(__dirname, 'dist'),
-    },
-  },
-  {
-    entry: autoLiveReloadPlugin.clientEntryFile(),
-    output: {
-      filename: 'main-livereload.js',
+      filename: 'index.js',
       path: path.resolve(__dirname, 'dist'),
     },
   },
