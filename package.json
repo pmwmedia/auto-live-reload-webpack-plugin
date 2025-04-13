@@ -57,6 +57,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.client.json && tsc -p tsconfig.plugin.json",
     "test": "jest",
-    "lint": "eslint src/**/*"
+    "lint": "eslint src/**/*",
+    "fix": "eslint src/**/* --fix"
   }
 }
