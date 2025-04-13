@@ -1,6 +1,6 @@
 {
   "name": "auto-live-reload-webpack-plugin",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Webpack plugin that allows pages and resources to be automatically reloaded without using DevServer",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
