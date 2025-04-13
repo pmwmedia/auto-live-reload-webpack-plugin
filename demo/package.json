@@ -3,7 +3,7 @@
   "scripts": {
     "build": "webpack --mode=development",
     "watch": "webpack --mode=development --watch",
-    "lint": "eslint *.js src/**/*.js",
+    "lint": "eslint *.js *.mjs src/**/*.js",
     "fix": "eslint *.js *.mjs src/**/*.js --fix"
   },
   "devDependencies": {
