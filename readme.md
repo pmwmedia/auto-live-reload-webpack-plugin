@@ -68,6 +68,10 @@ module.exports = {
 
 Multiple entry points can share the same instance of `AutoLiveReloadPlugin` and the same entry point for `autoAutoLiveReloadPlugin.clientEntryFile()`. In opposite to `tiny-lr` based Webpack plugins, multiple live reload files are supported in the same HTML page.
 
+## Example
+
+You can find a fully working minimal example project in the [demo folder](https://github.com/pmwmedia/auto-live-reload-webpack-plugin/tree/main/demo).
+
 ## Credits
 
 Inspired by the awesome [zsimo/handmade-livereload-webpack-plugin](https://github.com/zsimo/handmade-livereload-webpack-plugin), enhanced and redeveloped in Typescript by [Martin Winandy](https://github.com/pmwmedia).
