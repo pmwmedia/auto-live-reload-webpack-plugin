@@ -42,7 +42,7 @@
   "devDependencies": {
     "@eslint/js": "9.39.2",
     "@stylistic/eslint-plugin": "5.7.1",
-    "@types/node": "24.10.9",
+    "@types/node": "24.10.10",
     "@types/temp": "0.9.4",
     "@types/jest": "30.0.0",
     "@types/ws": "8.18.1",
