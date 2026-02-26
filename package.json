@@ -40,13 +40,13 @@
     "ws": "^8.0.0"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.3",
+    "@eslint/js": "10.0.1",
     "@stylistic/eslint-plugin": "5.9.0",
     "@types/node": "24.10.14",
     "@types/temp": "0.9.4",
     "@types/jest": "30.0.0",
     "@types/ws": "8.18.1",
-    "eslint": "9.39.3",
+    "eslint": "10.0.2",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "jest": "30.2.0",
     "ts-jest": "29.4.6",
