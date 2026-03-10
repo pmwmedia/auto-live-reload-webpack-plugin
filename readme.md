@@ -18,11 +18,11 @@ yarn add --dev auto-live-reload-webpack-plugin
 
 ## Options
 
-| Option    | Values                            | Default     |
-|-----------|-----------------------------------|-------------|
-| `host`    | host name or IP address as string | `localhost` |
-| `port`    | any number between 0 - 65,535     | `0`         |
-| `enabled` | `true` or `false`                 | `true`      |
+| Option    | Values                            | Default        |
+|-----------|-----------------------------------|----------------|
+| `host`    | host name or IP address as string | `localhost`    |
+| `port`    | any number between 0 - 65,535     | `0` (= random) |
+| `enabled` | `true` or `false`                 | `true`         |
 
 ### Host
 
