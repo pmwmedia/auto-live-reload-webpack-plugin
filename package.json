@@ -4,7 +4,7 @@
   "description": "Webpack plugin that allows pages and resources to be automatically reloaded without using DevServer",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "author": "Martin Winandy <martin.winandy@pmwmedia.de>",
+  "author": "Martin Winandy <martin.winandy@tinylog.org>",
   "license": "MIT",
   "repository": {
     "type": "git",
