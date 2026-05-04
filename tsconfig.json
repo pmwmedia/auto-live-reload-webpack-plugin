@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "lib": [
       "es2021",
       "dom"
     ],
-    "module": "CommonJS",
-    "moduleResolution": "node16",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "outDir": "./dist",
     "removeComments": false,
     "strict": true,
-    "target": "es6",
-    "esModuleInterop": true
+    "target": "es6"
   }
 }
-
