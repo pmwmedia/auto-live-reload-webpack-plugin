@@ -11,6 +11,6 @@
     "eslint": "10.4.0",
     "globals": "17.6.0",
     "webpack": "5.107.2",
-    "webpack-cli": "7.0.2"
+    "webpack-cli": "7.0.3"
   }
 }
