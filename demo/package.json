@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "auto-live-reload-webpack-plugin": "..",
-    "eslint": "10.9.1",
+    "eslint": "10.10.0",
     "globals": "17.12.0",
     "webpack": "5.110.3",
     "webpack-cli": "7.2.3"
