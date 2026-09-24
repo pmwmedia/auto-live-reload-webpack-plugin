@@ -51,7 +51,7 @@
     "jest": "30.5.2",
     "ts-jest": "29.4.13",
     "ts-node": "10.9.2",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "typescript-eslint": "8.70.1",
     "webpack": "5.111.1"
   },
