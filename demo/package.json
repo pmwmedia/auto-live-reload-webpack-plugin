@@ -10,7 +10,7 @@
     "auto-live-reload-webpack-plugin": "..",
     "eslint": "10.13.0",
     "globals": "17.13.0",
-    "webpack": "5.112.0",
+    "webpack": "5.112.1",
     "webpack-cli": "7.2.3"
   }
 }
